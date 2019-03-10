@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.monsoonmania.intellij.plugin.logsinjson.logsinjson</id>
+    <name>LogsInJSON</name>
+    <vendor email="support@monsoonmania.com" url="http://monsoonmania.com">Moonsoon Mania</vendor>
+
+    <description><![CDATA[
+    Pretty print if logs are in JSON format.<br>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        
+        <consoleFilterProvider implementation="Filters"/>
+        
+    </extensions>
+
+    <actions>
+        <action
+                id="ConsoleAction.ToJSON"
+                class="ConsoleAction"
+                text="To JSON"
+                description="To JSON">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
+        </action>
+
+    </actions>
+</idea-plugin>
